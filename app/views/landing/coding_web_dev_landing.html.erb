@@ -1,0 +1,23 @@
+<%= render "landing/ads/coding_web_dev_#{@ad}_top", ad: @ad %>
+<%= render "landing/common/about_ix" %>
+<%= render "landing/common/top_quote" %>
+<%= render "landing/courses/coding_web_dev_curriculum" %>
+<%= render "landing/common/internships" %>
+<%= render "landing/common/mid_quote" %>
+<%= render "landing/common/alumni" %>
+<%= render "landing/common/cape_town" %>
+
+<div class="hidden-xs"><%= render "partials/tuition", course_data: @course_data %></div>
+<div class="hidden-xs"><%= render "partials/apply" %></div>
+<div class="visible-xs"><%= render "partials/mobile_apply/coding_web_dev" %></div>
+<%= render "partials/optinmonster_dialog", optin_code: @course_data[:optin_code], optin_number: @course_data[:optin_number] %>
+
+<!-- Hide mobile nav -->
+<% content_for :javascript do %>
+<script>
+  $(document).ready(function() {
+    // Remove mobile-nav-toggle class bc it has display: block !important.
+    $(".mobile-nav-toggle").removeClass("mobile-nav-toggle").hide();
+  });
+</script>
+<% end %>

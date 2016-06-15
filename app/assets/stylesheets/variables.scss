@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);
+// Uncomment when we need them. 
+// @font-face {
+//   font-family: Default;
+//   src: url("https://s3.amazonaws.com/ixassets/fonts/DefaultLight.otf");
+//   font-weight: 300;
+//   font-style: normal;
+// }
+// Hosting Default on S3 to get around Cloudfront CORS.
+@font-face {
+  font-family: DefaultFont;
+  src: url(https://s3.amazonaws.com/ixassets/fonts/DefaultNormal.otf) format('opentype');;
+  font-weight: normal;
+  font-style: normal;
+}
+// @font-face {
+//   font-family: DefaultFont;
+//   src: url(https://s3.amazonaws.com/ixassets/fonts/DefaultBold.otf) format('opentype');
+//   font-weight: bold;
+//   font-style: normal;
+// }
+
+// Variables and mixins
+$ix-green: #4ABD9B;
+$ix-pink: #F9007A;
+$ix-text-gray: #2e3137;
+$ix-background-gray: #f3f6f8;
+
+$mobile-nav-icon-width: 45px;
+
+@mixin default() {
+  font-family: "DefaultFont" "helvetica" sans-serif;
+  // font-weight: bold;
+  text-transform: uppercase;
+}
+
+// Vertical centering code from 
+// https://css-tricks.com/centering-in-the-unknown/
+@mixin centered-container() {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+}
+@mixin centered {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+@mixin border-radius($args...) {
+  -webkit-border-radius: $args;
+  -moz-border-radius: $args;
+  -ms-border-radius: $args;
+  -o-border-radius: $args;
+  border-radius: $args;
+}

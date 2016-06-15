@@ -1,0 +1,153 @@
+// On alumni, FAQ, privacy pages. 
+.container.pad-top {
+  padding-top: 50px;
+  &.pad-bottom {
+    padding-bottom: 30px;
+  }
+}
+// sm, md, lg nav
+$nav-transition-time: 0.4s;
+.navbar {
+  z-index: 3;
+  margin: 0;
+  @include transition(all $nav-transition-time);
+  .container .navbar-brand {
+    background: image-url('logos/ix-white') no-repeat 0 0;
+    background-size: contain;
+    height: 34px;
+    width: 200px; // Wide enough for height to take precedence
+    padding: 0;
+    margin-top: 16px;
+    margin-left: 0;
+  }
+  .nav {
+    text-shadow: none;
+    padding: 10px;
+    > li {
+      margin-left: 20px;
+      > a {
+        color: white;
+        padding: 10px 5px;
+        text-shadow: 0 1px 1px #777;
+        border-bottom: 2px solid transparent;
+        @include transition(color $nav-transition-time);
+        @include xs {
+          padding: 16px;
+        }
+      }
+      > .dropdown-menu:after, > .dropdown-menu:before {
+        display: none;
+      }
+      > .dropdown-menu.pull-right {
+        right: -1px;
+      }
+    }
+    .nav-btn {
+      color: white;
+      margin-top: 4px;
+    }
+  }
+  // Navbar white styles
+  &.nav-white {
+    background-color: white;
+    border-bottom: 1pt solid #ddd;
+    .nav > li > a {
+      color: $ix-text-gray;
+      text-shadow: none;
+      &:hover {
+        color: $ix-text-gray;
+      }
+    }
+    .navbar-brand {
+      background-image: image-url('logos/ix-black'); 
+    }
+  }
+}
+
+.page-green .navbar .nav > li > a:focus, 
+.page-green .navbar .nav > li > a:hover {
+  text-shadow: none;
+  background-color: transparent;
+  border-bottom: 2px solid $ix-pink;
+}
+
+// xs nav
+$mobile-nav-width: 160px;
+$mobile-nav-trans-time: 0.3s;
+.mobile-wrapper {
+  @include transition(left $mobile-nav-trans-time);
+  height: 100%;
+  position: relative;
+  left: 0;
+  &.mobile-nav-active {
+    left: $mobile-nav-width;
+    overflow-x: hidden;
+  }
+}
+.mobile-nav-toggle {
+  @extend .visible-xs;
+  @include transition(left $mobile-nav-trans-time);
+  position: fixed;
+  top: 10px; left: 10px;
+  @extend .full-rounded;
+  width: $mobile-nav-icon-width;
+  height: $mobile-nav-icon-width;
+  background: rgba(white, 0.8) image-url('icons/menu') no-repeat center;
+  background-size: 40%;
+  border: 1px solid #ddd;
+  z-index: 4;
+  cursor: pointer;
+  &.mobile-nav-active {
+    left: -$mobile-nav-icon-width;
+    left: 10px + $mobile-nav-width;
+  }
+}
+.mobile-nav {
+  @extend .visible-xs;
+  @include transition(left $mobile-nav-trans-time);
+  position: fixed;
+  height: 100%;
+  width: $mobile-nav-width;
+  left: -$mobile-nav-width;
+  padding: 20px;
+  background-color: white;
+  z-index: 5;
+  overflow-y: scroll;
+  &.mobile-nav-active {
+    left: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 15px 0;
+      &.indented {
+        margin-left: 15px;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.dropdown-menu {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  > li > a {
+    padding: 10px 20px;
+    @include transition(background-color 0);
+  }
+}
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.page-green .dropdown-menu > li > a:hover {
+  background-color: $ix-pink;
+}

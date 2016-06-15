@@ -1,0 +1,108 @@
+// Font Awesome
+// Manually installing FontAwesome to get around Cloudfront CORS.
+@font-face {
+  font-family: FontAwesome;
+  src: url(https://s3.amazonaws.com/ixassets/fonts/FontAwesome.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+// Slick Font
+/* Icons */
+@font-face
+{
+  font-family: 'slick';
+  font-weight: normal;
+  font-style: normal;
+  src: url(https://s3.amazonaws.com/ixassets/fonts/slick.eot);
+  src: url(https://s3.amazonaws.com/ixassets/fonts/slick.eot?#iefix) format('embedded-opentype'), url(https://s3.amazonaws.com/ixassets/fonts/slick.woff) format('woff'), url(https://s3.amazonaws.com/ixassets/fonts/slick.ttf) format('truetype');
+}
+
+// Bootstrap
+.table.table-no-border {
+  td, th {
+    border: none;
+  }
+}
+
+.btn {
+  border: none;
+  text-align: center;
+  color: white;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  @include transition(all 0.25s);
+  @include border-radius(3px);
+}
+a.btn, a .btn {
+  color: white;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-apply {
+  background-color: $ix-text-gray;
+  &:hover { background-color: $ix-pink; }
+}
+
+[class*="col-"] {
+  img {
+    width: 100%;
+  }
+}
+
+// Slick
+$slick-nav-width: 70px;
+.slick-arrow {
+  width: $slick-nav-width;
+  height: $slick-nav-width;
+}
+.slick-prev, .slick-next {
+  top: 50%;
+  z-index: 2;
+  &:before {
+    font-size: $slick-nav-width;
+    // opacity: 0.75;
+    color: $brand-primary;
+  }
+}
+.slick-prev {
+  left: 25px;
+}
+.slick-next {
+  right: 25px;
+}
+.slick-slide:focus {
+  outline: none;
+}
+
+// jPre
+#jpreOverlay {
+  background-color: #fff;
+}
+#jpreSlide{
+  font-size:14px;
+  font-weight:bold;
+  color: #333;
+  text-align:center;
+  width:50%;
+  height:30%;
+}
+#jpreLoader{
+  width:100%;
+  height:1px;
+  border:none;
+}
+#jpreBar {
+  background: #52bad5;
+}
+#jprePercentage {
+  color:#333;
+  text-align:center;
+  top:-100%;
+  margin: 20px 0 0;
+}

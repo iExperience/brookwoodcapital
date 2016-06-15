@@ -1,0 +1,825 @@
+// Main styles
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  font: $font-size-base "Lato", Helvetica, sans-serif;
+  line-height: $line-height-base;
+  background-color: $ix-background-gray;
+  color: $ix-text-gray;
+  padding: 0;
+  &.hidden-body { visibility: hidden; }
+  &.visible-body { visibility: visible; }
+  &.mobile-nav-active { overflow-x: hidden; }
+}
+
+a {
+  @include transition(text-decoration 0.25s);
+  @include transition(color 0.25s);
+  &.no-effect { color: inherit; }
+  &:hover { text-decoration: none; }
+}
+
+ul:not(.bulleted), li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.bulleted {
+  padding-left: 20px;
+  li {
+    list-style: disc;
+  }
+}
+
+b, .b { font-weight: normal; }
+strong, .strong { font-weight: bold; }
+small, .small { font-size: 80%; }
+
+h1, h2, h3, h4, h5, h6, p { 
+  margin-bottom: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0;
+  @include xs { margin-bottom: 20px; }
+}
+h4, h5, h6, p {
+  margin-bottom: 10px;
+  @include xs { margin-bottom: 10px; }
+}
+h1 { 
+  font-size: 60px;
+  @include xs { font-size: 48px; }
+}
+h2 { 
+  font-size: 48px;
+  @include xs { font-size: 36px; }
+}
+h3 { 
+  font-size: 30px;
+  @include xs { font-size: 24px; }
+}
+h4 { 
+  font-size: 24px;
+  @include xs { font-size: 20px; }
+}
+h5 { 
+  font-size: 18px;
+  @include xs { font-size: 16px; }
+}
+h6 { 
+  font-size: 14px;
+  @include xs { font-size: 14px; }
+}
+p {
+  &.big {
+    font-size: 18px;
+    @include xs { font-size: 16px; }
+  }
+  &.bigger {
+    font-size: 24px;
+    @include xs { font-size: 20px; }
+  }
+}
+img.padded {
+  padding: 20px;
+}
+
+// Utility
+
+.light { font-weight: 300; }
+.uppercase { text-transform: uppercase; }
+.full-height { height: 100%; }
+.full-width { width: 100%; }
+.small { font-size: 80%; }
+.most-height { 
+  height: 80%;
+  min-height: 450px;
+}
+.bordered { border: 1pt solid #ddd; padding: 10px; }
+.margin-top { margin-top: 20px; }
+.margin-bottom { margin-bottom: 20px; }
+.big-margin-bottom {
+  margin-bottom: 40px;
+  @include xs {
+    margin-bottom: 25px;
+  }
+}
+.no-margin-top { margin-top: 0; }
+.no-margin-bottom { margin-bottom: 0; }
+.padding-all {
+  padding: 30px;
+  @include xs {
+    padding: 10px;
+  }
+}
+.rounded { @include border-radius(3px); }
+.cursor { cursor: pointer; }
+.absolute-full {
+  position: absolute;
+  height: 100%; width: 100%;
+  top: 0; left: 0;
+}
+.relative { position: relative; }
+.align-middle { vertical-align: middle; }
+.text-gray { color: gray; }
+.default { @include default(); }
+.emphasis-green { color: $ix-green; }
+.emphasis-pink { color: $ix-pink; }
+.boxed {
+  @extend .rounded;
+  border: 1pt solid #ddd;
+  padding: 10px;
+}
+.gray-box {
+  @extend .boxed;
+  background-color: #f3f6f8;
+}
+.white-box {
+  @extend .boxed;
+  background-color: white;
+}
+
+section {
+  position: relative;
+  &.padded {
+    padding: 30px 0 50px;
+    @include xs {
+      padding: 30px 0;
+    }
+  }
+}
+
+div {
+  &.padded {
+    padding: 20px;
+  }
+}
+
+.anchor {
+  position: absolute;
+  top: -40px;
+  @include xs {
+    top: auto;
+  }
+}
+
+.full-rounded {
+  @include border-radius(100%);
+  img { @include border-radius(50%); }
+}
+
+// Backgrounds
+.bg-fixed {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  // Automatically scroll on small screens.
+  @include xs {
+    background-attachment: scroll
+  }
+  // This is added to mobile devices that are > xs by javascript.
+  &.bg-scroll {
+    background-attachment: scroll
+  }
+}
+.bg-overlay {
+  @extend .absolute-full;
+  background-color: rgba(black, 0.3);
+  &.light {
+    background-color: rgba(black, 0.1);
+  }
+  &.dark {
+    background-color: rgba(black, 0.5);
+  }
+}
+.bg-light-gray {
+  background-color: $ix-background-gray; 
+}
+.bg-home-main {
+  background-image: asset-url('backgrounds/home-main');
+}
+// Courses
+.bg-coding-main {
+  background-image: asset-url('backgrounds/coding-main');
+}
+.bg-coding-web-dev-main {
+  background-image: asset-url('backgrounds/coding-web-dev-main');
+}
+.bg-coding-ios-main {
+  background-image: asset-url('backgrounds/coding-ios-main');
+}
+.bg-consulting-main {
+  background-image: asset-url('backgrounds/consulting-main');
+}
+.bg-finance-main {
+  background-image: asset-url('backgrounds/finance-main');
+}
+.bg-ux-design-main {
+  background-image: asset-url('backgrounds/ux-design-main');
+}
+.bg-data-science-main {
+  background-image: asset-url('backgrounds/data-science-main');
+}
+.bg-product-management-main {
+  background-image: asset-url('backgrounds/product-management-main');
+}
+// About
+.bg-about-main {
+  background-image: asset-url('backgrounds/about-main');
+}
+.bg-parents-main {
+  background-image: asset-url('backgrounds/parents-main');
+}
+.bg-pricing-main {
+  background-image: asset-url('backgrounds/pricing-main');
+}
+
+.bg-home-mid {
+  background-image: asset-url('backgrounds/home-mid');
+}
+.bg-coding-mid {
+  background-image: asset-url('backgrounds/coding-mid');
+}
+.bg-coding-web-dev-mid {
+  background-image: asset-url('backgrounds/coding-web-dev-mid');
+}
+.bg-coding-ios-mid {
+  background-image: asset-url('backgrounds/coding-ios-mid');
+}
+.bg-consulting-mid {
+  background-image: asset-url('backgrounds/consulting-mid');
+}
+.bg-finance-mid {
+  background-image: asset-url('backgrounds/finance-mid');
+}
+.bg-ux-design-mid {
+  background-image: asset-url('backgrounds/ux-design-mid');
+}
+.bg-data-science-mid {
+  background-image: asset-url('backgrounds/data-science-mid');
+}
+.bg-product-management-mid {
+  background-image: asset-url('backgrounds/product-management-mid');
+}
+
+// About
+.bg-parents-mid {
+  background-image: asset-url('backgrounds/parents-mid');
+}
+.bg-faq-mid {
+  background-image: asset-url('backgrounds/faq-mid');
+}
+
+// Landing pages
+.bg-landing-common-mid {
+  background-image: asset-url('backgrounds/landing/common-mid');
+}
+.bg-landing-common-bottom {
+  background-image: asset-url('backgrounds/landing/common-bottom');
+}
+// Course-specific
+.bg-31-main {
+  background-image: asset-url('backgrounds/landing/31-main');
+}
+.bg-123-main {
+  background-image: asset-url('backgrounds/landing/123-main');
+}
+.bg-371-main {
+  background-image: asset-url('backgrounds/landing/371-main');
+}
+.bg-372-main {
+  background-image: asset-url('backgrounds/landing/372-main');
+}
+.bg-761-main {
+  background-image: asset-url('backgrounds/landing/761-main');
+}
+.bg-762-main {
+  background-image: asset-url('backgrounds/landing/762-main');
+}
+.bg-932-main {
+  background-image: asset-url('backgrounds/coding-web-dev-main');
+}
+
+// Headlines and quotes
+.main-headline {
+  color: white;
+  padding-top: 80px;
+  @include xs {
+    padding-top: 40px;
+  }
+  z-index: 1;
+  position: relative;
+  h1 {
+    margin-bottom: 30px;
+    @include xs {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+  }
+  // Course pages
+  h3 {
+    margin: 10px;
+    @include xs {
+      font-size: 18px;
+      margin: 10px;
+    }
+  }
+  // Main page
+  h4 {
+    margin: 3px 0;
+    @include xs {
+      font-size: 18px;
+    }
+  }
+  &.parent-headline {
+    padding-top: 280px;
+    @include xs {
+      padding-top: 170px;
+    }
+  }
+}
+
+.down-arrow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -30px;
+  margin-bottom: 100px;
+  @include xs {
+    margin-left: -$mobile-nav-icon-width/2;
+    margin-bottom: 60px;
+  }
+  .down-arrow-icon {
+    vertical-align: bottom;
+    width: 60px;
+    @include xs {
+      width: $mobile-nav-icon-width;
+    }
+    transition: transform 0.2s ease;
+    opacity: 0.7;
+  }
+  &:hover .down-arrow-icon {
+    transform: translateY(-10px);
+  }
+}
+
+.image-quote-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  height: 100%;
+  @include centered-container(); // Vertical center container.
+}
+
+.image-quote {
+  width: 70%;
+  @include centered; // Vertical center element. 
+  @include xs {
+    width: 90%;
+    font-size: 80%;
+  }
+  .quote {
+    color: #fff;
+    background: rgba(0,0,0,.8);
+    margin: 0;
+    padding: 10px;
+  }
+  .author {
+    background: rgba(255, 255, 255, .9);
+    margin: 0;
+    padding: 10px;
+    font-weight: normal;
+  }
+}
+
+.video-thumbnail {
+  @extend .rounded;
+  border: 1pt solid #ddd;
+  height: 410px;
+  position: relative;
+  background-position: top center;
+  background-size: cover;
+  @include xs {
+    height: 250px;
+  }
+}
+
+.home-video-thumbnail {
+  @extend .video-thumbnail;
+  background-image: asset-url('backgrounds/home-video-thumbnail');
+}
+
+.about-video-thumbnail {
+  @extend .video-thumbnail;
+  background-image: asset-url('backgrounds/about-video-thumbnail');
+}
+
+.parents-video-thumbnail {
+  @extend .video-thumbnail;
+  height: 300px;
+  @include xs {
+    height: 250px;
+  }
+  background-image: asset-url('backgrounds/parents-video-thumbnail');
+}
+
+$play-height: 120px;
+$small-play-height: 80px;
+.play-button {
+  height: $play-height !important;
+  width: $play-height !important; 
+  margin: $play-height/-2 $play-height/-2; 
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  @include transition(all 0.25s);
+  &:hover {
+    transform: scale(1.1);
+  }
+  @include xs { 
+    height: $small-play-height !important;
+    width: $small-play-height !important; 
+    margin: $small-play-height/-2 $small-play-height/-2;
+  }
+}
+
+// In testimonials, and on home page. 
+.why-ix-img {
+  @extend .col-xs-8;
+  @extend .col-xs-offset-2;
+  @extend .col-sm-6;
+  @extend .col-sm-offset-3;
+  @extend .col-md-4;
+  @extend .col-md-offset-4;
+  z-index: 1;
+
+  img {
+    @extend .full-rounded;
+    max-width: 200px;
+    border: 15px solid white;
+    margin: 0 auto;
+    &.small {
+      max-width: 150px;
+      border: 10px solid white;
+    }
+  }
+}
+
+.why-ix-quote {
+  @extend .col-xs-10;
+  @extend .col-md-8;
+  @extend .col-xs-offset-1;
+  @extend .col-md-offset-2;
+
+  min-height: 350px;
+  margin-top: -15px;
+  padding: 20px;
+  &.no-min-height {
+    min-height: auto;
+  }
+  p {
+    @include xs {
+      text-align: center;
+    }
+  }
+}
+
+// Pillars
+.pillar {
+  background: #fff;
+  margin-bottom: 20px;
+  @include xs {
+    margin-bottom: 0;
+  }
+  &.highlight {
+    box-shadow: 0 1px 15px $ix-pink;
+  }
+  .pillar-inner {
+    padding: 30px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+  }
+  dl {
+    margin-bottom: 0;
+  }
+  dt {
+    font-weight: normal;
+    font-size: 120%;
+    padding: 12px;
+  }
+  dd {
+    font-weight: 300;
+    border-top: 1px solid #e0e1e2;
+    padding: 12px;
+  }
+}
+
+// Curriculum
+.bordered-cell {
+  border: 1pt solid #eee;
+  padding: 20px;
+  .sized-img {
+    margin: 0 auto 30px;
+    height: 110px;
+    width: 110px;
+    &.small-margin {
+      margin: 0 auto 5px;
+    }
+  }
+}
+.curriculum-cell {
+  border-top: 5px solid $ix-pink;
+  height: 350px;
+  @include sm {
+    height: 450px;
+    h5 {
+      height: 55px;
+    }
+  }
+  @include xs {
+    h5 {
+      height: auto;
+    }
+    height: 210px;
+  }
+  p {
+    @extend .hidden-xs;
+  }
+  img {
+    opacity: 0.6;
+  }
+}
+
+// // Testimonial
+// .testimonial-cell {
+//   // border-top: 5px solid $ix-green;
+//   min-height: 630px;
+//   margin: 20px;
+//   padding: 60px 40px 0;
+//   @include transition(padding 0.2s, box-shadow 0.2s);
+//   .full-rounded {
+//     padding: 20px 40px;
+//   }
+//   img {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+//   .slick-current & {
+//     padding: 20px;
+//     box-shadow: 0px 0px 2px $brand-primary;
+//     .text {
+//       font-size: 120%;
+//     }
+//   }
+// }
+
+img.clock {
+  width: 45%;
+}
+
+img.home-activity {
+  @extend .full-rounded;
+  border: 2px solid $ix-green;
+  padding: 30px;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto 20px;
+  @include sm {
+    padding: 20px;
+    height: 150px;
+    width: 150px;
+  }
+  @include xs {
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+// Courses
+.impact-text-container {
+  position: relative;
+  .text {
+    font-family: "DefaultFont";
+    color: white;
+    position: absolute;
+    width: 100%;
+    left: 0; top: 43%;
+    font-size: 200%;
+    line-height: 1.3;
+    &.up {
+      top: 36%;
+    }
+    @include xs {
+      font-size: 150%;
+      &.up {
+        top: 31%;
+      }
+    }
+  }
+  .text-light {
+    font-weight: 300;
+    color: white;
+    font-size: 200%;
+    line-height: 1.3;
+    position: absolute;
+    left: 15px; bottom: 10px;
+    .btn-border {
+      border: 1pt solid white;
+      padding: 5px;
+      margin: 3px 0;
+    }
+    @include xs {
+      font-size: 200%;
+    }
+  }
+  img {
+    @extend .rounded;
+  }
+  .bg-overlay {
+    @include transition(opacity 0.2s);
+  }
+  &.hover:hover .bg-overlay {
+    opacity: 0;
+  }
+}
+.col-courses {
+  @extend .col-xs-10;
+  @extend .col-xs-offset-1;
+  @extend .col-sm-6;
+  @extend .col-sm-offset-0;
+  @extend .col-md-4;
+}
+
+// Internships
+.col-company-logo {
+  @extend .col-xs-6;
+  @extend .col-xs-offset-3;
+  @extend .col-sm-3;
+  @extend .col-sm-offset-0;
+}
+.company-logo {
+  opacity: 0.7;
+  @include transition(opacity 0.1s ease-in-out);
+  &.margin-top {
+    margin-top: 30px;
+    @include sm {
+      margin-top: 20px;
+    }
+  }
+  &.press-logo {
+    @include xs {
+      width: auto;
+      max-height: 40px;
+      margin: 0 auto 20px;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Vertical alignment css borrowed from
+// http://stackoverflow.com/questions/7273338/how-to-vertically-align-an-image-inside-div 
+.vertical-align-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.faq-internship-logo-grid div {
+  height: 100px;
+  img {
+    max-height: 100px;
+    vertical-align: middle;
+  }
+}
+
+.faq-internship-project-media {
+  height: 200px;
+  img {
+    max-height: 200px;
+    width: auto;
+    vertical-align: middle;
+  }
+}
+
+// Mailchimp temp signup form
+#mc_message_div {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  background: #F9007a;
+  color: white;
+  margin: 10px;
+  padding: 7px;
+}
+
+// Waypoints
+.hidden-element-1,
+.hidden-element-2,
+.hidden-element-3,
+.hidden-element-4,
+.hidden-element-5 {
+  opacity: 0;
+}
+
+.visible-element {
+  opacity: 1;
+  @include transition(opacity 1s ease-in-out);
+}
+
+// Styles for video based excursions section.  
+video.hover-play-video {
+  width: 100%;
+  height: auto;
+}
+
+.excursion-description {
+  margin-top: 10px;
+}
+
+// About page styles
+.about-top-layout {
+  @extend .col-md-6; 
+  @extend .col-sm-12; 
+  @extend .col-sm-offset-0; 
+  @extend .col-xs-10; 
+  @extend .col-xs-offset-1;
+}
+.about-stats {
+  border: 1px solid #dce0e0;
+  background-color: #fff;
+  padding: 25px;
+  max-width: 400px;
+  h3 {
+    margin: 0
+  }
+  h6 {
+    margin: 0;
+  }
+  img {
+    max-width: 75px;
+  }
+}
+
+.about-team-photos {
+  @extend .full-rounded;
+  @extend .margin-top;
+  max-width: 200px;
+}
+
+.about-team-directors {
+  @extend .full-rounded;
+  max-width: 180px;
+  @include sm { margin-bottom: 20px; }
+}
+
+.about-first-section {
+  @include xs {
+    text-align: center;
+  }
+}
+
+// Pricing
+.pricing-comparison-table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .text-center;
+  th {
+    @extend .text-center;
+  }
+  tbody > tr:first-child {
+    @extend .b;
+  }
+  tbody > tr > td {
+    &:first-child {
+      padding: 20px;
+      min-width: 170px;
+    }
+    padding: 10px;
+    vertical-align: middle;
+    &:first-child {
+      width: 20%;
+    }
+    &.excursions {
+      max-width: 15%;
+    }
+  }
+}
+
+// NOTE (rafi): Leaving apply bar code in case we reuse in the future.
+.apply-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: black;
+  color: white;
+}

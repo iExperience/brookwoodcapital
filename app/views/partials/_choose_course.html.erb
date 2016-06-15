@@ -1,0 +1,39 @@
+<section class="portfolio text-center padded bg-white waypoint-5 hidden-element-5">
+  <a class="anchor" id="courses"></a>
+  <div class="wrapper">
+    <div class="container">
+      <div class="row margin-bottom">
+        <div class="col-sm-12">
+          <h2>Your next best decision.</h2>
+          <h4>Browse our courses to find what excites you most.</h4>
+        </div>
+      </div> 
+      <div class="row">
+        <% courses = ["Product Management", "Data Science", "UX Design", "Coding", "Finance", "Consulting"] %>
+        <% courses.each do |course| %>
+          <% link_name = course.downcase.gsub(" ", "-") %>
+          <div class="col-courses margin-bottom">
+            <%= link_to course_path(link_name) do %>
+              <div class="impact-text-container hover">
+                <div class="bg-overlay dark"></div>
+                <%= image_tag "home/courses-#{link_name}" %>
+                <% case course %>
+                <% when "Consulting" %>
+                  <div class="text text-uppercase up">Management<br>Consulting</div>
+                <% when "Finance" %>
+                  <div class="text text-uppercase up">Wall Street<br>Finance</div>
+                <% when "UX Design" %>
+                  <div class="text text-uppercase up">User Experience<br>Design</div>
+                <% when "Product Management" %>
+                  <div class="text text-uppercase up">Product<br>Management</div>
+                <% else %>
+                  <div class="text text-uppercase"><%= course %></div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

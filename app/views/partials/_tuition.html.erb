@@ -1,0 +1,78 @@
+<% asterisk_text ||= course_data[:asterisk_text] %>
+<section class="text-center padded">
+  <div class="container">
+    <div class="row margin-bottom waypoint-4">
+      <div class="col-sm-12">
+        <h2>Now let's make it happen.</h2>
+        <h4>Dates and tuition.</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1">
+        <p class="big b">
+          <%= course_data[:full_name] %> dates
+          <%= "*" if asterisk_text %>
+        </p>
+        <% sessions = {
+          1 => "May 30 - July 22",
+          2 => "June 27 - Aug 19",
+          3 => "July 25 - Sept 16"
+        } %>
+        <table class="table text-left">
+          <tbody>
+            <% sessions.each do |number, dates| %>
+              <% if course_data[:sessions].include? number %>
+                <% if course_data[:full_sessions].include? number %>
+                <tr style="color: #bbb;">
+                <% else %>
+                <tr>
+                <% end %>
+                  <td>
+                    Session <%= number %>
+                    <% if number == 3 %>
+                      (with internship)
+                    <% end %>
+                    <% if course_data[:almost_full_sessions].include? number %>
+                    <span class="label label-warning label-sm">ALMOST FULL</span>
+                    <% elsif course_data[:full_sessions].include? number %>
+                    <span class="label label-danger label-sm">SESSION FULL!</span>
+                    <% end %>
+                  </td>
+                  <td class="text-right"><%= dates %></td>
+                </tr>
+              <% end %>
+            <% end %>
+            <% if course_data[:sessions].include? 3 %>
+              <tr>
+                <td>
+                  Session 3 (no internship)
+                </td>
+                <td class="text-right">July 25 - Aug 19</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <p class="text-left">
+          The dates above include the internship, but you also have the option of applying for just the course (then your time in Cape Town will be 4 weeks shorter). 
+        </p>
+        <% if asterisk_text %>
+        <p class="text-left">
+          <em class="b">*<%= asterisk_text  %></em>
+        </p>
+        <% end %>
+      </div>
+      <hr class="visible-xs">
+      <div class="col-sm-5">
+        <p class="big b">Tuition</p>
+        <p class="text-left">
+          Tuition includes accommodation, course fee, daily breakfast, 4 weekend excursions (such as shark cage diving, surf lessons, etc.), airport pickup/dropoff, iXperience swag and events. 
+        </p>
+        <p class="text-left">
+          <em>In a special partnership with 
+          <a href="http://www.platform45.com/" target="_blank">Platform 45</a>, we are able to offer scholarships up to <b>$2000</b>! Just fill out the appropriate questions on our application. 
+          </em>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+<section class="text-center padded waypoint-4 hidden-element-4 hidden-xs">
+  <div class="container">
+    <div class="row margin-bottom">
+      <div class="col-sm-12">
+        <h2>The proof is in our alumni.</h2>
+        <h4>iXperience is an investment in your success.</h4>
+      </div>
+    </div>
+    <% big_alumni = [
+      {name: "Zack", photo: "zack-chauvin", school: "Harvard '15", ix: "iX '14", position: "Engineer at Facebook"},
+      {name: "Sabra", photo: "sabra-meretab", school: "Stanford '16", ix: "iX '15", position: "Analyst at Morgan Stanley"},
+      {name: "Cameron", photo: "cameron-cross", school: "UVa '16", ix: "iX '14", position: "Consultant at Bain & Co"},
+    ] %>
+    <div class="row margin-top margin-bottom">
+      <% big_alumni.each_with_index do |alum, index| %>
+        <% klass = "" %>
+        <% klass = "col-sm-offset-1 col-md-offset-0" if index == 0 %>
+        <% klass = "hidden-sm" if index == 2 %>
+        <div class="col-sm-5 col-md-4 <%= klass %>">
+          <div class="impact-text-container">
+            <div class="bg-overlay"></div>
+            <%= image_tag "people/#{alum[:photo]}", class: "rounded" %>
+            <div class="text-light text-left">
+              <%= alum[:name] %>
+              <br>
+              <span class="small"><%= alum[:position] %></span>
+              <br>
+              <span class="small"><%= alum[:school] %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row margin-top margin-bottom">
+      <h4>Other alumni are now working at:</h4>
+    </div>
+    <% alumni = [
+      {name: "Inesha", photo: "inesha-premaratne", school: "Harvard '15", ix: "iX '14", position: "Analyst at BCG"},
+      {name: "Oscar", photo: "oscar-wang", school: "Duke '16", ix: "iX '15", position: "Developer at Uber"},
+      {name: "Phoebe", photo: "phoebe-brown", school: "Princeton '16", ix: "iX '15", position: "Analyst at Ernest & Young"},
+      {name: "Alex", photo: "alex-struck", school: "UVa '16", ix: "iX '14", position: "Analyst at McKinsey"},
+      {name: "Aryan", photo: "aryan-chhabria", school: "Brown '16", ix: "iX '15", position: "Engineer at Google"},
+      {name: "Alex", photo: "alex-tenn", school: "Yale '16", ix: "iX '14", position: "Analyst at Blackrock"},
+      {name: "Kate", photo: "kate-ernst", school: "UMich '17", ix: "iX '15", position: "Developer at Apple"},
+      {name: "Rachel", photo: "rachel-lee", school: "Stanford '17", ix: "iX '15", position: "Biz Dev at Upstart"},
+      ]
+    %>
+    <% alumni.each_with_index do |alum, index| %>
+    <%
+      klass = case index 
+      when 2 then "hidden-xs"
+      when 3 then "hidden-xs hidden-sm"
+      when 5 then "hidden-xs"
+      when 6 then "hidden-xs"
+      when 7 then "hidden-xs hidden-sm"
+      else ""
+      end
+    %>
+    <% if index == 0 || index == 4 %>
+    <div class="row light text-left">
+    <% end %>
+      <div class="col-sm-4 col-md-3 margin-bottom <%= klass %>">
+        <div class="rounded white-box">
+          <div class="row">
+            <div class="col-xs-4">
+              <%= image_tag "people/#{alum[:photo]}", class: "full-rounded" %>
+            </div>
+            <div class="col-xs-8">
+              <span><%= alum[:name] %></span><br>
+              <p class="small"><%= alum[:school] %>, <%= alum[:ix] %></p>
+              <span class="small b visible-xs"><%= alum[:position] %></span>
+            </div>
+            <div class="col-xs-12 hidden-xs">
+              <span class="b text-center"><%= alum[:position] %></span>
+            </div>
+          </div>
+        </div>
+      <% if index == 3 || index == 7 %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</section>

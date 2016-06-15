@@ -1,0 +1,57 @@
+<footer class="container footer-distributed">
+  <div class="row footer text-center">
+    <div class="col-sm-4">
+      <%= image_tag "logos/ix-compact-white", class: "footer-logo" %>
+      <div>Learning. Reimagined.</div>
+      <p>hello@ixperience.co.za</p>
+      <hr width="170px" />
+      <p class="small">
+        <span class="text-gray">Copyright &copy; 2015 iXperience</span>
+      </p>
+      <p class="small text-gray">
+        (<%= link_to "Privacy policy", privacy_path %>)
+      </p>
+      <a href="http://www.facebook.com/iexperiencect" target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="http://www.instagram.com/ixperience" target="_blank">
+        <i class="fa fa-instagram"></i>
+      </a>
+    </div>
+    <div class="col-sm-4 hidden-xs">
+      <h6>COURSES</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <ul>
+            <li><%= link_to "Data Science", "/courses/data-science" %></li>
+            <li><%= link_to "Coding", "/courses/coding" %></li>
+            <li><%= link_to "Wall St. Finance", "/courses/finance" %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li><%= link_to "Product Management", "/courses/product-management"  %></li>
+            <li><%= link_to "UX Design", "/courses/ux-design" %></li>
+            <li><%= link_to "Mgmt Consulting", "/courses/consulting" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 hidden-xs">
+      <h6>ABOUT iXPERIENCE</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <li><%= link_to "Who We Are", about_path %></li>
+          <li><%= link_to "Our Alumni", alumni_path %></li>
+          <li><a href="http://blog.ixperience.co.za">Blog</a></li>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li><%= link_to "FAQ", faq_path %></li>
+            <li><%= link_to "For Parents", parents_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

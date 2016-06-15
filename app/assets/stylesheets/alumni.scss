@@ -1,0 +1,114 @@
+@import "isotope";
+
+.alumni-header{
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 45px;
+}
+
+/* Alumni content styling  */
+
+/* Variables */
+
+$top-border: #4ABD9B;
+.cell-top{
+  height: 5px;
+  background-color: $top-border;
+}
+
+.box {
+  height: 320px;
+  width: 240px;
+  margin: 20px 10px 20px 10px;
+  background-color: white;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+}
+
+.alumni-thumb {
+  height: 165px;
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: -14px;
+    margin-left: 47px;
+  }
+}
+
+.alumni-info {
+  p {
+    text-align: center;
+  }
+}
+
+.alumni-college {
+  p{
+    font-size: 15px;
+  }
+}
+
+/* sidebar styling */
+
+// Variables
+$sidebar-color: white;
+.alumni-sidebar {
+  background-color: $sidebar-color;
+  border-top: 5px solid $top-border;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+}
+
+.sidebar-header {
+  background-color: $sidebar-color;
+  margin: 0px;
+  padding: 10px 10px 10px 20px;
+  font-weight: 400;
+}
+
+.sidebar-element {
+  // border: 1px solid black;
+  padding: 5px 0px 0px 20px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.clear{
+  margin-top: 20px;
+  padding: 10px 0px 0px 20px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* Modal Styles */
+
+.modal-header {
+  border-top: 5px solid $top-border;
+  text-align: center;
+}
+.modal-body {
+  text-align: center;
+  img {
+    border-radius: 100%;
+    width: 50%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  p {
+    margin: 20px;
+  }
+}
+
+// checkbox styling for filter
+input[type=checkbox] {
+  height:18px; 
+  display:inline-block;
+  line-height:18px;
+  margin: 0 10px 0 0;
+  font-size:18px;
+  cursor:pointer;
+}

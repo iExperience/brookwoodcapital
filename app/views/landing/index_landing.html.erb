@@ -1,0 +1,7 @@
+<%= render "landing/ads/index_#{@ad}_top", ad: @ad %>
+<%= render "landing/common/about_ix" %>
+<%= render "landing/common/single_testimonial" %>
+<%= render "landing/common/cape_town_small" %>
+<%= render "landing/common/infopack_optin" %>
+<!-- Optin montster -->
+<%= render 'partials/optinmonster_dialog', optin_code: @course_data[:optin_code], optin_number: @course_data[:optin_number] %>

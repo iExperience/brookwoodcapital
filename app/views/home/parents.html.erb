@@ -1,0 +1,347 @@
+<section class="most-height bg-fixed bg-gradient bg-parents-main">
+  <div class="bg-overlay"></div>
+  <div class="bg-overlay"></div>
+  <div class="main-headline parent-headline text-center container">
+    <div class="row margin-top">
+      <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+        <h3 class="big em text-left">
+          "Brandon said he learned more in a month than he could have imagined learning in a year at school.
+          He loved every aspect of South Africa, too."
+        </h3>
+        <p class="big text-left">— Gail Taleisnik, Univ. of Michigan Parent</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Intro -->
+<section class="text-center padded">
+  <div class="container">
+    <div class="row margin-bottom">
+      <div class="col-sm-12">
+        <h2>Parents love us.</h2>
+        <h4>This page is for you.</h4>
+      </div>
+    </div>
+    <div class="row margin-top">
+      <div class="col-sm-6 col-md-5 col-md-offset-1 text-left">
+        <p class="big">
+          We know that as a parent, sending your child across the globe can be daunting. We've created this page to give you important information about iXperience to ease any concerns you might have. Our promise to parents is to make <span class="b">student success, safety and education quality</span> our main priority during their experience in Cape Town.
+        </p>
+        <p class="big hidden-xs">
+          In the past, parents have visited their kids during the iXperience program and had incredible experiences getting to see what we are about.
+        </p>
+        <p class="big">
+          Watch this video to see what past parents had to say when they visited Cape Town.
+        </p>
+      </div>
+      <div class="col-sm-6 col-md-5">
+        <a href='https://www.youtube.com/embed/OAAkAIiEyGc?autoplay=1&autohide=1&border=0&egm=0&showinfo=0' data-type="iframe" data-options="width: 1920, height: 1080" id="ilightbox">
+          <div class="parents-video-thumbnail">
+            <div class="bg-overlay"></div>
+            <%= image_tag 'icons/play-button', class: 'play-button' %>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our alumni thrive -->
+<section class="text-center padded bg-white waypoint-1">
+  <div class="container hidden-element-1">
+    <div class="row margin-bottom">
+      <div class="col-sm-12">
+        <h2>Our alumni thrive in the real world.</h2>
+        <h4>iXperience is an investment in your child's success.</h4>
+      </div>
+    </div>
+    <% big_alumni = [
+      {name: "Zack", photo: "zack-chauvin", school: "Harvard '15", ix: "iX '14", position: "Engineer at Facebook"},
+      {name: "Sabra", photo: "sabra-meretab", school: "Stanford '16", ix: "iX '15", position: "Analyst at Morgan Stanley"},
+      {name: "Cameron", photo: "cameron-cross", school: "UVa '16", ix: "iX '14", position: "Consultant at Bain & Co"},
+    ] %>
+    <div class="row margin-top margin-bottom">
+      <% big_alumni.each_with_index do |alum, index| %>
+        <% klass = "" %>
+        <% klass = "col-sm-offset-1 col-md-offset-0" if index == 0 %>
+        <% klass = "hidden-sm" if index == 2 %>
+        <div class="col-sm-5 col-md-4 <%= klass %>">
+          <div class="impact-text-container">
+            <div class="bg-overlay"></div>
+            <%= image_tag "people/#{alum[:photo]}", class: "rounded" %>
+            <div class="text-light text-left">
+              <%= alum[:name] %>
+              <br>
+              <span class="small"><%= alum[:position] %></span>
+              <br>
+              <span class="small"><%= alum[:school] %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row margin-top margin-bottom">
+      <h4>Other alumni are now working at:</h4>
+    </div>
+    <% alumni = [
+      {name: "Inesha", photo: "inesha-premaratne", school: "Harvard '15", ix: "iX '14", position: "Analyst at BCG"},
+      {name: "Oscar", photo: "oscar-wang", school: "Duke '16", ix: "iX '15", position: "Developer at Uber"},
+      {name: "Phoebe", photo: "phoebe-brown", school: "Princeton '16", ix: "iX '15", position: "Analyst at Ernest & Young"},
+      {name: "Alex", photo: "alex-struck", school: "UVa '16", ix: "iX '14", position: "Analyst at McKinsey"},
+      {name: "Aryan", photo: "aryan-chhabria", school: "Brown '16", ix: "iX '15", position: "Engineer at Google"},
+      {name: "Alex", photo: "alex-tenn", school: "Yale '16", ix: "iX '14", position: "Analyst at Blackrock"},
+      {name: "Kate", photo: "kate-ernst", school: "UMich '17", ix: "iX '15", position: "Developer at Apple"},
+      {name: "Rachel", photo: "rachel-lee", school: "Stanford '17", ix: "iX '15", position: "Biz Dev at Upstart"},
+      ]
+    %>
+    <% alumni.each_with_index do |alum, index| %>
+    <%
+      klass = case index 
+      when 2 then "hidden-xs"
+      when 3 then "hidden-xs hidden-sm"
+      when 5 then "hidden-xs"
+      when 6 then "hidden-xs"
+      when 7 then "hidden-xs hidden-sm"
+      else ""
+      end
+    %>
+    <% if index == 0 || index == 4 %>
+    <div class="row light text-left">
+    <% end %>
+      <div class="col-sm-4 col-md-3 margin-bottom <%= klass %>">
+        <div class="rounded gray-box">
+          <div class="row">
+            <div class="col-xs-4">
+              <%= image_tag "people/#{alum[:photo]}", class: "full-rounded" %>
+            </div>
+            <div class="col-xs-8">
+              <span><%= alum[:name] %></span><br>
+              <p class="small"><%= alum[:school] %>, <%= alum[:ix] %></p>
+              <span class="small b visible-xs"><%= alum[:position] %></span>
+            </div>
+            <div class="col-xs-12 hidden-xs">
+              <span class="b text-center"><%= alum[:position] %></span>
+            </div>
+          </div>
+        </div>
+      <% if index == 3 || index == 7 %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</section>
+<!-- Press -->
+<section class="text-center padded waypoint-2">
+  <div class="container hidden-element-2">
+    <div class="row margin-top margin-bottom">
+      <h2>As featured in:</h2>
+      <div class="col-sm-2 col-sm-offset-1">
+        <%= link_to 'http://yaledailynews.com/blog/2015/11/22/alumni-company-ixperience-teaches-practical-career-skills/', target: 'blank' do %>
+        <%= image_tag 'logos/yale-daily-news', class: 'company-logo press-logo' %>
+        <% end %>
+      </div>
+      <div class="col-sm-2">
+        <%= link_to 'https://www.michigandaily.com/article/ross-and-ixperience-host-interactive-startup-seminar', target: 'blank' do %>
+        <%= image_tag 'logos/michigan-daily', class: 'company-logo press-logo' %>
+        <% end %>
+      </div>
+      <div class="col-sm-1">
+        <%= link_to 'http://gq.co.za/2015/09/should-you-be-coding/', target: 'blank' do %>
+        <%= image_tag 'logos/gq', class: 'company-logo press-logo' %>
+        <% end %>
+      </div>
+      <div class="col-sm-2 hidden-xs">
+        <%= link_to 'http://ventureburn.com/2015/01/meet-ixperience-the-startup-thats-teaching-us-college-kids-how-to-code-in-africa/', target: 'blank' do %>
+        <%= image_tag 'logos/ventureburn', class: 'company-logo press-logo' %>
+        <% end %>
+      </div>
+      <div class="col-sm-3 hidden-xs">
+        <%= link_to 'http://dailynorthwestern.com/2015/10/20/campus/south-african-ceo-shares-path-from-rural-origins-to-wall-street/', target: 'blank' do %>
+        <%= image_tag 'logos/the-daily-northwestern', class: 'company-logo press-logo' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Mid image -->
+<section class="text-center most-height bg-fixed bg-parents-mid">
+  <div class="bg-overlay"></div>
+  <div class="image-quote-container">
+    <div class="image-quote">
+      <h4 class="quote">"The most valuable things I learned are those that <span class="emphasis">can't be taught at school</span>."</h4>
+      <p class="author">Zack Chauvin, Harvard 2017, iX 2014</p>
+    </div>
+  </div>
+</section>
+<!-- Mind at ease info -->
+<section class="text-center padded waypoint-3">
+  <div class="container hidden-element-3">
+    <h2 class="big-margin-bottom">Information to put your mind at ease.</h2>
+    <div class="row big-margin-bottom text-left">
+      <div class="col-sm-6 col-md-offset-1 col-md-5 margin-bottom">
+        <h3 class="b no-margin-top">Cape Town's safest neighborhood</h3>
+        <p class="big">iXperience Lodging and Campus are located in Green Point, one of Cape Town's safest and trendiest neighborhoods, right near the World Cup Stadium. Our certified security policies include:</p>
+        <ul class="bulleted">
+          <li>24-hour front desk staff and physical security</li>
+          <li>Strict fingerprint and room-card access control</li>
+          <li>CCTV equipped throughout Lodging and Campus</li>
+          <li>Health insurance</li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-md-5 margin-bottom">
+        <%= image_tag "parents/neighborhood", class: "rounded" %>
+      </div>
+    </div>
+    <div class="row big-margin-bottom text-left">
+      <div class="col-sm-6 col-md-offset-1 col-md-5 margin-bottom">
+        <h3 class="b no-margin-top">World class education</h3>
+        <p class="big">
+          Students learn from leading industry experts, in state-of-the-art classrooms 5 minutes from iX Lodging. Our intensive, outcomes-based approach includes:
+        </p>
+        <ul class="bulleted">
+          <li>160+ hours of learning</li>
+          <li>Daily lectures, projects, and after-class workshops</li>
+          <li>Personalized career and resume counseling</li>
+          <li>Highly selective classes capped at 25 students</li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-md-5 margin-bottom">
+        <%= image_tag "parents/education", class: "rounded" %>
+      </div>
+    </div>
+    <div class="row big-margin-bottom text-left">
+      <div class="col-sm-6 col-md-offset-1 col-md-5 margin-bottom">
+        <h3 class="b no-margin-top">First world infrastructure</h3>
+        <p class="big">
+          With world-class infrastructure built around a breathtaking natural landscape, Cape Town is the perfect place to learn and explore.
+        </p>
+        <ul class="bulleted">
+          <li>Best-in-class private hospitals, including the award-winning <%= link_to "Mediclinic", "http://www.mediclinic.co.za/", target: "black" %></li>
+          <li class="b">Comprehensive, top-tier health insurance included with tuition, in partnership with <%= link_to "Discovery Health", "https://www.discovery.co.za/portal/individual/360-plan", target: "blank" %></li>
+          <li>The New York Times featured Cape Town as the <%= link_to "top city to visit in 2014", "http://www.nytimes.com/interactive/2014/01/10/travel/2014-places-to-go.html", target: "blank" %></li>
+          <li>Leading edge <%= link_to "public transport", "http://myciti.org.za/en/home/", target: "blank" %>, as well as the immense popularity of <%= link_to "Uber", "https://www.uber.com/cities/cape-town", target: "blank" %></li>
+          <li><%= link_to "Reported by National Geographic", "http://travel.nationalgeographic.com/travel/city-guides/cape-town-travel-basics/", target: "blank" %> to have among the best drinkable tap water in the world</li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-md-5 margin-bottom">
+        <%= image_tag "parents/city-infrastructure", class: "rounded" %>
+      </div>
+    </div>
+    <div class="row big-margin-bottom text-left">
+      <div class="col-sm-6 col-md-offset-1 col-md-5 margin-bottom">
+        <h3 class="b no-margin-top">A network of the world's best</h3>
+        <p class="big">
+          iXperience attracts the most brilliant, motivated students from the globe's top universities. This ensures that classes are filled with intellectual discussion and constant learning. After iXperience, we cultivate an engaged international alumni community where students share their personal and professional successes with each other.
+        </p>
+        <p class="big">Some of our alumni have even started companies together!</p>
+      </div>
+      <div class="col-sm-6 col-md-5 margin-bottom">
+        <div class="white-box">
+          <h5 class="b text-center">Alumni Universities (%)</h5>
+          <%= image_tag "parents/universities", class: "rounded" %>
+        </div>
+      </div>
+    </div>
+    <div class="row big-margin-bottom text-left">
+      <div class="col-sm-6 col-md-offset-1 col-md-5 margin-bottom">
+        <h3 class="b no-margin-top">A commitment to diversity</h3>
+        <p class="big">
+          We're proud of the kinds of people we bring together each year. With hundreds of thousands of dollars in scholarships granted, we try to help anyone who is hardworking and driven have the experience of a lifetime in Cape Town. We also do our best to balance our classes in gender and ethnicity.
+        </p>
+      </div>
+      <div class="col-sm-6 col-md-5 margin-bottom">
+        <div class="white-box text-center">
+          <br>
+          <br class="hidden-xs">
+          <h1 class="emphasis b no-margin-top no-margin-bottom">$220,000+</h1>
+          <h4>in scholarships granted</h4>
+          <br>
+          <br class="hidden-xs">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- More questions -->
+<section class="text-center padded bg-white waypoint-4">
+  <div class="container hidden-element-4">
+    <div class="row">
+      <h2>We know there are always more questions.</h2>
+      <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+        <p class="bigger margin-bottom">
+          There's only so much we can put on a website, and we want to make sure all your questions are answered.
+          Get in touch:
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 margin-top">
+        <div class="gray-box rounded">
+          <h4 class="b">Information Pack</h4>
+          <p>
+            We'll email you a comprehensive guide to student life at iXperience.
+          </p>
+          <% optin_code = "pgda4p2wct0k9el0" %>
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-md-offset-1 col-md-10 margin-top">
+              <input type="submit" value="Download full infopack" class="btn btn-info btn-block manual-optin-trigger" data-optin-slug="<%= optin_code %>">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 margin-top">
+        <div class="gray-box rounded">
+          <h4 class="b">FAQs</h4>
+          <p>
+            View our comprehensive FAQs for more details about the iX program.
+          </p>
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 margin-top">
+              <a href="/faq" class="btn btn-block btn-warning">Explore FAQs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 margin-top">
+        <div class="gray-box rounded">
+          <h4 class="b">Talk to a Human</h4>
+          <p>
+            Chat with an iX team member for speedy, professional help.
+          </p>
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 margin-top">
+              <a class="btn btn-block btn-success" onclick="Intercom('showNewMessage', 'I have a question: ')">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Parents fun -->
+<section class="text-center padded">
+  <div class="container">
+    <div class="row margin-bottom">
+      <div class="col-sm-12">
+        <h2>Why should your kids have all the fun?</h2>
+        <h4>
+          We were overwhelmed by the number of parents who came to Cape Town last year,
+          <br>
+          and <b>inspired by the experience they shared with their children</b>.
+          <br>
+        </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>
+          Contact us for a week's itinerary at <span class="b emphasis">hello@ixperience.co.za</span>.
+        </h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render "partials/apply" %>
+
+<%= render 'partials/optinmonster_dialog', optin_code: optin_code, optin_number: "14555.266446" %>

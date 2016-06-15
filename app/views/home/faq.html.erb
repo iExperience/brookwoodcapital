@@ -1,0 +1,65 @@
+<div class="bg-colored text-center">
+  <div class="container pad-top pad-bottom">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>FAQ</h2>
+        <h4>It'd be stupid not to ask.</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container margin-bottom">
+  <div class="row">
+    <div class="col-sm-8">
+      <%= render "home/faq_sections/general" %>
+      <%= render "home/faq_sections/application_process" %>
+      <%= render "home/faq_sections/theclass" %>
+      <%= render "home/faq_sections/internship" %>
+      <%= render "home/faq_sections/dailylife" %>
+      <%= render "home/faq_sections/excursions" %>
+      <%= render "home/faq_sections/after_ix" %>
+    </div>
+
+    <aside class="col-sm-4">
+      <div class="widget widget-wrapper text-center" style="background-color: transparent;">
+        <%= image_tag 'people/gardner-fiveash', class: 'full-rounded hidden-xs' %>
+        <div class="widget-wrapper faq-testimonial hidden-xs">
+          <p>
+            <em>"An excellent way to combine cultural immersion through studying abroad with a very well-taught, practical skill set. And being surrounded by a group of highly motivated and passionate peers."</em>
+          </p>
+          <p> Gardner Fiveash, iX 2014.</p>
+        </div>
+
+        <%= image_tag 'people/kevin-nguyen', class: 'full-rounded hidden-xs' %>
+        <div class="widget-wrapper faq-testimonial hidden-xs">
+          <p>
+            <em>"iXperience has been the ultimate level up. Not only have I learned how to build web apps but I've gotten the chance to acquire real-life work experience & meet some amazing people. I'm forever grateful."</em>
+          </p>
+          <p> Kevin Nguyen, iX 2014.</p>
+        </div>
+
+        <%= image_tag 'people/ezinne-nwankwo', class: 'full-rounded hidden-sm' %>
+        <div class="widget-wrapper faq-testimonial hidden-sm">
+          <p>
+            <em>"iXperience truly surpassed all of my conceived expectations and assumptions that I had before arriving in South Africa. I was home-sick, nervous about being in a new country, and not really sure if coding was going to be fun for me. But iXperience turned all of that fear and confusion into an amazing learning experience that was not only about the course but also learning about myself and the beautiful mother city that is Cape Town, South Africa."</em>
+          </p>
+          <p>Ezinne Nwankwo, iX 2014.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<!-- Background Image -->
+<section class="text-center most-height bg-fixed bg-faq-mid" >
+  <div class="bg-overlay"></div>
+  <div class="image-quote-container">
+    <div class="image-quote">
+      <h4 class="quote">I dove off the <span class="emphasis">deep end</span>  into the new world I've been wanting to enter forever. 
+      </h4>
+      <p class="author">Vikram Rajagopalan, iX 2014</p>
+    </div>
+  </div>
+</section> 
+
+<%= render "partials/apply" %>

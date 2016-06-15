@@ -1,0 +1,192 @@
+/* General Blueprint Style */
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+} 
+
+/* SASS VARIABLES */
+
+$quote-color: #ecf0f1;
+$quote-border-color: #bdc3c7;
+
+/* MIXINS */
+
+@mixin box-style {
+	background-color: $ix-background-gray;
+	border: 1px solid $quote-border-color;
+	padding: 5px 10px 5px 10px;
+}
+
+@mixin quote-text {
+	font-size: 14px;
+	font-style: italic;
+	color: black;
+}
+
+/* BASE STYLES */
+
+.accordion {
+	background: #fff;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+.accordion-group {
+	border: none;
+	margin-bottom: 0;
+	border-bottom: 1px solid #ddd;
+	border-radius: 0;
+}
+
+.accordion p {
+	font-size: 17px;
+}
+
+/* ALUMNI QUOTES BLOCK */
+
+.faq-quote-block-left{
+	padding: 10px;
+	display: inline-block;
+}
+.faq-quote-image{
+	padding: 2px;
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+.faq-quote-inner{
+	@include box-style;
+	max-width: 420px;
+	margin: 5px 0px 0px 10px;
+	float: left;
+	p {
+		@include quote-text;
+	}
+}
+
+.faq-sidebar {
+	img {
+		width: 80%;
+	}
+}
+
+.faq-testimonial {
+	margin: 30px 0 40px 0; 
+	border: 1px solid #ddd;
+}
+
+.widget-wrapper {
+	background: #fff;
+	padding: 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.faq-sidebar{
+	margin: 30px 0 40px 0; 
+	border: 1px solid #ddd
+}
+.widget .tab-content {
+	background: #fff;
+	padding: 30px;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+.widget .nav-tabs,
+.widget .nav-tabs > .active > a, 
+.widget .nav-tabs > .active > a:hover, 
+.widget .nav-tabs > .active > a:focus,
+.widget .nav-tabs > li > a {
+	border: none;
+}
+.widget .nav-tabs > li {
+	margin: 0 1px 0 0;
+	padding: 0;
+}
+.widget {
+	margin-bottom: 60px;
+}
+.widget ul {
+	list-style: none;
+	list-style-position: inside;
+	margin: 0;
+}
+.widget ul li {
+	padding: 0 0 0 10px;
+	margin: 0 0 10px;
+}
+.widget ul li:last-of-type {
+	margin: 0;
+}
+.widget ul li i.icon-caret-right {
+	margin: 0 0 0 -10px;
+}
+
+/* ALUMNI PROJECTS BLOCK */
+
+.faq-project-block-large{
+	border: 1px solid gray;
+	background-color: red;
+	padding: 2px;
+	height: 400px;
+	margin-bottom: 20px;
+}
+.faq-project-block-small{
+	padding: 10px;
+	width: 357px;
+	display: inline-block;
+	vertical-align: top;
+	&:hover{
+		background: #f6f6f6;
+	}
+}
+
+.faq-project-header{
+	// border: 1px solid black;
+	p{
+		color: black;
+		// text-decoration: underline;
+	}
+}
+.faq-project-image img{
+	border: 1px solid $quote-border-color;
+}
+.faq-project-description{
+	margin-top: 10px;
+	p{
+		@include quote-text;
+	}
+}
+
+/* ACCORDION */
+
+.accordion-toggle {
+	outline: none; 	/* Removes pesky gray outline when clicking on accordion tab */
+}
+
+h3.accordion-heading {
+	display: block;
+	padding: 8px 15px;
+	margin: 0;
+	font: 16px/24px "Lato", Arial, Helvetica, Geneva, sans-serif;
+	color: #4ABD9B;
+	border-bottom: 1px solid #ddd !important; 
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-ms-transition: 0.25s;
+	transition: 0.25s;
+}
+
+.faq-border {
+	border-bottom: 1px solid #ddd;
+	border-top: none;
+	.image-size-control img {
+		max-width: 300px;
+	}
+}
+
+.accordion-inner {
+	padding: 17px 27px;
+}

@@ -1,0 +1,55 @@
+<!-- UX Design -->
+<section class="most-height bg-fixed bg-ux-design-main">
+  <a class="anchor" id="home"></a>
+  <div class="bg-overlay"></div>
+  <div class="main-headline text-center container">
+    <h1>Design the Future</h1>
+    <h3>Architect exceptional products.</h3>
+    <h3>Understand user psychology.</h3>
+    <h3>Make your visions a reality.</h3>
+  </div>
+</section>
+<section class="text-center padded">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h2>From sticky problems to elegant interfaces.</h2>
+        <h4>
+          Every single thing we use was designed by somebody. 
+          The difference between an average product and <b>a revolutionary one</b> is the way you experience it. Learn to <b>research, mock, and prototype</b> a better digital future.
+        </h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Curriculum -->
+<section class="text-center padded bg-white waypoint-1 hidden-element-1">
+  <div class="container">
+    <div class="row margin-bottom">
+      <div class="col-sm-12">
+        <h2>Meet your new toolkit.</h2>
+        <h4>A curriculum to give your ideas life.</h4>
+      </div>
+    </div>
+    
+    <%= render "partials/curricula/ux_design" %>
+  </div>
+</section>
+
+<%= render "internships_no_logos" %>
+
+<section class="text-center bg-fixed bg-ux-design-mid most-height">
+  <div class="bg-overlay"></div>
+  <div class="image-quote-container">
+    <div class="image-quote">
+      <h4 class="quote">I cannot thank the iXperience team enough for the incredible skills and summer they gave me. <span class="emphasis">Never a dull moment.</span></h4>
+      <p class="author">Ross Bower, Dartmouth '18, iX '15</p>
+    </div>
+  </div>
+</section>
+
+<%= render "partials/testimonials", initial_testimonial: 12 %>
+<%= render 'partials/tuition', course_data: @course_data %>
+<%= render "partials/apply" %>
+<%= render 'partials/optinmonster_dialog', optin_code: @course_data[:optin_code], optin_number: @course_data[:optin_number] %>

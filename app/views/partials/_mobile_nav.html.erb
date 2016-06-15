@@ -1,0 +1,52 @@
+<div class="mobile-nav-toggle mobile-nav-js"></div>
+<div class="mobile-nav mobile-nav-js">
+  <%= link_to root_path do %>
+    <%= image_tag 'logos/ix-black' %> 
+  <% end %>
+  <ul>
+    <li class="mobile-nav-course-toggle">
+      Courses
+      &nbsp;
+      <i class="fa fa-caret-down"></i>
+    </li>
+    <span class="mobile-nav-courses" style="display: none;">
+      <%= link_to course_path("product-management") do  %>
+        <li class="indented small" style="margin-top: 0;">Product Management</li>
+      <% end %>
+      <%= link_to course_path("ux-design") do  %>
+        <li class="indented small">User Experience Design</li>
+      <% end %>
+      <%= link_to course_path("data-science") do  %>
+        <li class="indented small">Data Science</li>
+      <% end %>
+      <%= link_to course_path("coding") do  %>
+        <li class="indented small">Coding</li>
+      <% end %>
+      <%= link_to course_path("finance") do  %>
+        <li class="indented small">Wall St. Finance</li>
+      <% end %>
+      <%= link_to course_path("consulting") do  %>
+        <li class="indented small">Management Consulting</li>
+      <% end %>
+    </span>
+    <%= link_to pricing_path do  %>
+      <li>Pricing</li>
+    <% end %>
+    <%= link_to about_path do  %>
+      <li>Who We Are</li>
+    <% end %>
+    <%= link_to parents_path do  %>
+      <li>For Parents</li>
+    <% end %>
+    <%= link_to alumni_path do  %>
+      <li>Our Alumni</li>
+    <% end %>
+    <hr>
+    <%= link_to faq_path do  %>
+      <li>FAQ</li>
+    <% end %>
+    <%= link_to "http://blog.ixperience.co.za", target: "blank" do  %>
+      <li>Blog</li>
+    <% end %>
+  </ul>
+</div>

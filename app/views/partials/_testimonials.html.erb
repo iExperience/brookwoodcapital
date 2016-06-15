@@ -1,0 +1,63 @@
+<% if defined? initial_testimonial %>
+  <% content_for :javascript do %>
+  <script>
+    $(document).ready(function() {
+      $(".testimonial-slider").slick("slickGoTo", <%= initial_testimonial %>,
+        false)
+    });
+  </script>
+  <% end %>
+<% end %>
+<section class="text-center padded bg-white waypoint-4 hidden-element-4">
+  <div class="container">      
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>The proof is <br class="visible-xs"> in our alumni.</h2>
+        <h4 class="visible-xs">
+          (swipe left for more)
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="testimonial-slider margin-bottom">
+    <% testimonial_data.each do |tl| %>
+      <div class="row">
+        <div class="why-ix-img">
+          <%= image_tag img_file_from_name(tl[:name]) %>
+        </div>
+        <div class="why-ix-quote bg-light-gray no-min-height">
+          <p class="margin-bottom"></p>
+          <p class="big text-left">
+            "<%= tl[:quote_html].html_safe %>"
+          </p>
+          <h4><%= tl[:name] %>, <%= tl[:school] %> '<%= tl[:grad_year] %></h4>
+        </div>
+      </div>
+    <% end %>
+  </div><!-- testimonial-slider -->
+  <br class="hidden-xs">
+  <!-- TODO(rafi): release when the alumni page is presentable. -->
+  <!-- <div class="container">
+    <div class="row hidden-xs">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="rounded">
+          <p class="big margin-bottom">
+            <b>Our alumni are on over 40 campuses across the world</b>.
+            <br>
+            They'd love to share their experiences with you.
+          </p>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <a href="/alumni">
+                <p class="big btn btn-primary btn-lg full-width">
+                  Meet one for a coffee at school
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <br>
+</section>

@@ -1,0 +1,64 @@
+<section class="contact text-center bg-white padded">
+  <a class="anchor" id="apply"></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>APPLICATIONS <br class="visible-xs visible-sm"><b>OPEN</b></h2>
+        <h4>
+          Due to popular demand, we have created Session 3! 
+        </h4>
+      </div>
+    </div>
+    <div class="row margin-bottom hidden-xs text-center">
+      <div class="col-sm-4 col-md-2 col-md-offset-2">
+        <%= image_tag "icons/interview-step-1", class: "padded" %>
+        <p>
+          <b>Step 1: 60 mins</b>
+          <br>
+          Online application
+        </p>
+      </div>
+      <div class="col-sm-4 col-md-2 col-md-offset-1">
+        <%= image_tag "icons/interview-step-2", class: "padded" %>
+        <p>
+          <b>Step 2: 15 mins</b>
+          <br>
+          Video interview
+        </p>
+      </div>
+      <div class="col-sm-4 col-md-2 col-md-offset-1">
+        <%= image_tag "icons/interview-step-3", class: "padded" %>
+        <p>
+          <b>Step 3: 1 week</b>
+          <br>
+          Decision!
+        </p>
+      </div>
+    </div>
+    <div class="row margin-top">
+      <%= link_to "http://students.ixperience.co.za/embark", class: "btn btn-success btn-lg no-effect margin-bottom", style: "color: white;" do %>
+        <h5 class="b">Start application with Facebook</h5>
+      <% end %>
+      <p class="small cursor hover-underline margin-top" data-toggle="modal" data-target="#why-facebook-modal">
+        Why do you need my Facebook?
+      </p>
+    </div>
+  </div>
+</section>
+<div class="modal fade" id="why-facebook-modal" role="dialog" aria-labelledby="whyFacebookModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body light">
+        <p>
+          We use Facebook to <b>increase security</b> and <b>speed up the application process for you</b>. We don't request any information that we don't absolutely need.
+        </p>
+        <p>
+          Find out more by reading our <a href="/privacy" target="_blank">privacy policy</a>.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-xs btn-success" data-dismiss="modal">Got it!</button>
+      </div>
+    </div>
+  </div>
+</div>
