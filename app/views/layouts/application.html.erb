@@ -2,16 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>iXperience | Learning. Reimagined.</title>
+  <title>iXperience Capital</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="A life-changing career accelerator in Cape Town, South Africa">
+  <meta name="description" content="iX Capital">
   <link rel="image_src" href="<%= image_url 'img-src' %>"/>
   <!-- Facebook OG Tags -->
   <!-- https://developers.facebook.com/docs/sharing/best-practices#tags -->
   <meta property="og:title" content="An unparalleled educational summer abroad in Cape Town" />
-  <meta property="og:site_name" content="iXperience"/>
-  <meta property="og:url" content="http://ixperience.co.za" />
-  <meta property="og:description" content="College students: accelerate your career in 8-weeks in Cape Town. Take a class, land an internship, and discover a legendary culture this summer." />
+  <meta property="og:site_name" content="iX Capital"/>
+  <meta property="og:url" content="http://capital.ixperience.co.za" />
+  <meta property="og:description" content="" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="<%= image_url 'img-src' %>" />
@@ -19,7 +19,6 @@
   <%= favicon_link_tag 'favicon.png' %>
   <%= stylesheet_link_tag 'application' %>
   <%= csrf_meta_tags %>
-  <%= render 'partials/facebook_pixel' %>
 </head>
 <body class="page-green hidden-body">
   <%= render "partials/mobile_nav" %>
@@ -34,7 +33,5 @@
 
   <!-- Lazyloader for alumni page. -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-  <%= render 'partials/intercom' %>
-  <%= render 'partials/ganalytics' %>
 </body>
 </html>

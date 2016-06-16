@@ -4,30 +4,11 @@
       <%= link_to "", root_path, class: "navbar-brand" %>
     </div>
     <ul class="nav navbar-nav navbar-right hidden-xs">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Courses <span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu">
-          <li><%= link_to "Product Management", course_path("product-management") %></li>
-          <li><%= link_to "User Experience Design", course_path("ux-design") %></li>
-          <li><%= link_to "Data Science", course_path("data-science") %></li>
-          <li><%= link_to "Coding", course_path("coding") %></li>
-          <li><%= link_to "Wall Street Finance", course_path("finance") %></li>
-          <li><%= link_to "Management Consulting", course_path("consulting") %></li>
-        </ul>
+      <li>
+        <%= link_to "Investment Process", investment_process_path %>
       </li>
       <li>
-        <%= link_to "Pricing", pricing_path %>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="buttn", aria-expanded="false">More info <span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu">
-          <li><%= link_to "Who We Are", about_path %></li>
-          <li><%= link_to "For Parents", parents_path  %></li>
-          <li><%= link_to "Our Alumni", alumni_path  %></li>
-          <hr class="no-margin-bottom no-margin-top">
-          <li><%= link_to "FAQ", faq_path %></li>
-          <li><%= link_to "Blog", "http://blog.ixperience.co.za", target: "blank" %></li>
-        </ul>
+        <%= link_to "Who we are", about_path %>
       </li>
       <li>
         <!-- spans a necessary for styling. -->

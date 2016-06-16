@@ -25,13 +25,13 @@ development:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: ixmain_development
+  database: ixcapital_development
   timeout: 5000
   pool: 5
 
 test:
   <<: *default
-  database: ixmain_test
+  database: ixcapital_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -54,6 +54,6 @@ test:
 #
 production:
   <<: *default
-  database: ixmain_development
+  database: ixcapital
   # username: ixmain
   # password: <%= ENV['IXMAIN_DATABASE_PASSWORD'] %>
