@@ -12,7 +12,7 @@ $nav-transition-time: 0.4s;
   margin: 0;
   @include transition(all $nav-transition-time);
   .container .navbar-brand {
-    background: image-url('logos/ix-capital-white') no-repeat 0 0;
+    background: image-url('logos/ix-capital-white-large') no-repeat 0 0;
     background-size: contain;
     height: 34px;
     width: 200px; // Wide enough for height to take precedence
@@ -59,7 +59,7 @@ $nav-transition-time: 0.4s;
       }
     }
     .navbar-brand {
-      background-image: image-url('logos/ix-capital-black'); 
+      background-image: image-url('logos/ix-capital-black-large'); 
     }
   }
 }
