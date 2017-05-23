@@ -1,15 +1,18 @@
 source 'https://rubygems.org'
 
+ruby "2.2.0"
+
 # Rails
 gem 'rails', '4.2.2'
 # Server
 gem 'newrelic_rpm'
 gem 'puma'
 # Database
-gem 'pg'
+group :production do
+	gem 'pg'
+end
 # Models
 gem 'devise'
-gem 'activeadmin', github: 'activeadmin/active_admin'
 gem 'paperclip', "~> 4.1"
 gem "aws-sdk", '< 2.0'
 # Assets
@@ -19,6 +22,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem "jquery-slick-rails"
+gem "angularjs-rails"
+gem "lodash-rails"
+gem 'angular-rails-templates'
 # Production
 gem "rails_12factor"
 # Miscellaneous
@@ -33,6 +39,5 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem "pry-rails"
 end
 
