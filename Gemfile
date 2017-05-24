@@ -8,9 +8,7 @@ gem 'rails', '4.2.2'
 gem 'newrelic_rpm'
 gem 'puma'
 # Database
-group :production do
-	gem 'pg'
-end
+gem 'pg'
 # Models
 gem 'devise'
 gem 'paperclip', "~> 4.1"

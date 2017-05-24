@@ -17,20 +17,21 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: brookwoodcapital_development
   timeout: 5000
+  pool: 5
 
 test:
   <<: *default
-  database: ixmain_test
+  database: brookwoodcapital_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -53,6 +54,6 @@ test:
 #
 production:
   <<: *default
-  database: ixmain_development
+  database: brookwoodcapital
   # username: ixmain
   # password: <%= ENV['IXMAIN_DATABASE_PASSWORD'] %>
