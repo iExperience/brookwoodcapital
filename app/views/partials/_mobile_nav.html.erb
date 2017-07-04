@@ -1,14 +1,14 @@
 <div class="mobile-nav-toggle mobile-nav-js"></div>
 <div class="mobile-nav mobile-nav-js">
   <%= link_to root_path do %>
-    <%= image_tag 'logos/ix-black' %> 
+    <%= image_tag 'logos/ix-capital-black-large' %> 
   <% end %>
   <ul>
+  <%= link_to pitch_path do  %>
+      <li>Pitch competition</li>
+    <% end %>
     <%= link_to investment_process_path do  %>
       <li>Investment process</li>
     <% end %>
-<!--     <%#= link_to about_path do  %>
-      <li>Who We Are</li>
-    <#% end %> -->
   </ul>
 </div>
